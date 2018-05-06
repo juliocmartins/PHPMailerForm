@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>DevTools - Send Email Test</title>
+
+    <!-- Bootstrap -->
+    <link href="libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <h1 class="text-center">Send Email Test</h1>
+    <br/>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-4 col-md-4">
+          <form id="form">
+          <label>Nome</label>
+          <input type="text" name="name" class="form-control" />
+          <br/>
+          <label>E-mail</label>
+          <input type="text" name="email" class="form-control"/>
+          <br/>
+          <label>Nensagem</label>
+          <textarea class="form-control" name="message" style="resize: none;" rows="5"></textarea>
+        </form>
+        <br/>
+          <button type="button" class="btn btn-primary" id="send" style="width: 100%">Enviar</button>
+        </div>
+      </div>
+    </div>
+  
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('#send').on('click', function(){
+          $.post('sendEmail.php', $('#form').serialize(), function(){
+
+          });
+
+
+        });
+      });
+    </script>
+  </body>
+</html>
